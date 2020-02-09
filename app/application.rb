@@ -24,8 +24,7 @@ class Application
         resp.write "added #{item}"
         @@cart << item
       else 
-        @@cart.each do |i|
-          resp.write "#{i}\n"
+        resp.write "#{i}\n"
         end
       end
     elsif req.path.match(/search/)
