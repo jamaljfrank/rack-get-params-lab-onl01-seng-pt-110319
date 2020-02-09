@@ -20,8 +20,8 @@ class Application
       end
     elsif req.path.match(/add/)
       item = req.params["item"]
-      if @@cart.empty?
-        resp.write "Your cart is empty"
+      if @@items.include?(item)
+        @@cart << item
       else 
         @@cart.each do |i|
           resp.write "#{i}\n"
