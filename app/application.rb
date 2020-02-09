@@ -19,7 +19,7 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-      item = req.params[]
+      item = req.params[item]
       if @@cart.empty?
         resp.write "Your cart is empty"
       else 
