@@ -11,7 +11,8 @@ class Application
         resp.write "#{item}\n"
       end
     elsif req.path.match(/cart/)
-      @@cart.empty? ? resp.write "Your cart is empty" : @@cart.each do |item| 
+      @@cart.empty? ? resp.write "Your cart is empty" : @@cart.each do |item| resp.write "#{item}\n"
+    end
         
       end  
     elsif req.path.match(/search/)
