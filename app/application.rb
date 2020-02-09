@@ -2,6 +2,7 @@ class Application
 
   @@items = ["Apples","Carrots","Pears"]
   @@cart = []
+  
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
@@ -26,8 +27,8 @@ class Application
         @@cart << item
       else 
         resp.write "We don't have that item"
-        
       end
+      
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
